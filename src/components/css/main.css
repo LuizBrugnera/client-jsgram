@@ -258,14 +258,35 @@ html, body {
 
 /*Profile CSS*/
 
-
-.profile_conteiner {
+.flex_column {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
+}
 
+.title_profile {
+  text-align: center;
+}
+
+.profile_img_perfil{
+  width: 200px;
+}
+
+.profile_name{
+  font-size: 30px;
+  font-weight: 600;
+
+  padding: 20px;
+}
+
+.profile_conteiner {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   list-style: none;
 
   background-color: #f0da89;
@@ -275,23 +296,10 @@ html, body {
   padding: 30px;
 }
 
-.img_perfil_post {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
 .conteiner_img {
   width: 500px;
 }
 
 .img_post{
   width: 500px;
-}
-
-.user_name {
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
 }

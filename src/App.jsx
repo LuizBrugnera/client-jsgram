@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from "react";
 
 /// components
 
@@ -10,20 +9,22 @@ import Home from "./components/screens/Home";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./components/screens/Profile";
 import Feed from "./components/screens/Feed";
-import { AuthProvider } from "./AuthContext";
+import User from "./components/user/User"
+import { AuthProvider } from "./components/AuthContext";
 
 function App() {
 
   return (
     <AuthProvider>
-      <Menu/>
       <Router>
+      <Menu/>
+      <User/>
         <Routes>
           <Route exact="true" path="/" element={<Home />} />
-          <Route exact="true" path="/login" element={<Login/>} />
-          <Route exact="true" path="/signup" element={<Singup />} />
-          <Route exact="true" path="/profile" element={<ProtectedRoute><Profile/></ProtectedRoute>} />
-          <Route exact="true" path="/feed" element={<ProtectedRoute><Feed/></ProtectedRoute>} />
+          <Route exact="true" path="/login" element={<User screen="login"/>} />
+          <Route exact="true" path="/signup" element={<User screen="signup"/>} />
+          <Route exact="true" path="/profile" element={<ProtectedRoute><User screen="profile"/></ProtectedRoute>} />
+          <Route exact="true" path="/feed" element={<Feed/>} />
         </Routes>
       </Router>
     </AuthProvider>

@@ -5,10 +5,12 @@ import PostContext from "./PostContext";
 import '../css/main.css'
 
 
-const PostProfile = ({userID}) => {
+const PostProfile = ({userId}) => {
   const {listaPosts} = useContext(PostContext);
-
-  const UserPosts = listaPosts.filter((post) => post.usuario.codigo === userID);
+  console.log(listaPosts)
+  console.log(userId)
+  const UserPosts = listaPosts.filter((post) => post.usuario.codigo === userId);
+  console.log(UserPosts)
   return (
       <section>
         {UserPosts.length === 0 &&
@@ -18,9 +20,6 @@ const PostProfile = ({userID}) => {
         <ul className="profile_conteiner">
           {UserPosts.map((post) => (
             <li key={post.codigo} className="profile_post">
-              <p>
-                <img className="img_perfil_post" src={post.usuario.fotoperfil} alt="foto do perfil" /> <a className="user_name" href="profile">{post.usuario.nome}</a>
-              </p>
               <div className="conteiner_img">
               <img className="img_post" src={post.imagem} alt="imagem da postagem" />
               </div>

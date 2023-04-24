@@ -2,10 +2,10 @@ import React from 'react'
 
 import User from '../user/User'
 
-const Login = ({setIsAuthenticated}) => {
+const Login = () => {
   return (
     <>
-      <User screen='login' setIsAuthenticated={setIsAuthenticated}/>
+      <User screen='login'/>
     </>
   )
 }
