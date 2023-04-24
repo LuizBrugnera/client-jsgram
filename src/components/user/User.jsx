@@ -16,6 +16,7 @@ const User = ({ screen }) => {
 
   const { login, user } = useContext(AuthContext);
   const navigate = useNavigate();
+  const url = process.env.REACT_APP_API_URL;
 
   const recuperaUserCodigo = async (codigo) => {
     await fetch(`http://localhost:3005/users/${codigo}`)
@@ -25,7 +26,7 @@ const User = ({ screen }) => {
   };
 
   const recuperaUsers = async () => {
-    await fetch("http://localhost:3005/users")
+    await fetch(`${url}/users`)
       .then((response) => response.json())
       .then((json) => {
         const users = json.map(user => {
