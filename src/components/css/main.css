@@ -1,0 +1,297 @@
+html, body {
+  background-color: #F6D55C;
+  margin: 0px;
+  padding: 0px;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+/*Menu CSS*/
+
+.conteiner_nav_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  
+
+  background-color: #f5cf43;
+}
+
+.img_icon {
+  width: 5rem;
+  border-radius: 50%;
+}
+
+.conteiner_ul_flex {
+  display: flex;
+
+  list-style: none;
+  padding: 0px;
+}
+
+.item_li {
+  padding: 0.6rem;
+  margin: 0px 1.25rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.item_li a{
+  text-decoration: none;
+  color: black;
+}
+
+.item_li a:hover, .item_li a:active{
+  color: #20639B;
+  transition: 500ms;
+}
+
+@media (max-width: 800px) {
+  .conteiner_nav_flex {
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .img_icon {
+    width: 30%;
+  }
+
+  .conteiner_ul_flex li {
+    margin: 0 10px;
+  }
+}
+/*Feed CSS*/
+
+/*Post Flush*/
+.feed_conteiner {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  list-style: none;
+
+  background-color: #f0da89;
+}
+
+.post{
+  padding: 30px;
+}
+
+.img_perfil_post {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.conteiner_img {
+  width: 500px;
+}
+
+.img_post{
+  width: 500px;
+}
+
+.user_name {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  
+}
+
+.rel {
+  position: relative;
+  bottom: 1rem;
+  left: 5px;
+}
+/*Home CSS*/
+
+#home {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_title { 
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.home_text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+
+  margin: 5px;
+}
+
+.button_fr{
+  display: block;
+
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: solid black 1px;
+  padding: 20px;
+  margin: 20px;
+
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #f4c107;
+  color: rgb(0, 0, 0);
+}
+/*Login CSS*/
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.title_login {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.input_login{
+  display: block;
+
+  border-radius: 10px;
+  border: solid black 1px;
+  padding: 15px;
+  margin: 20px;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #f4c107;
+  color: rgb(0, 0, 0);
+}
+
+.input_login::placeholder {
+  color: rgba(0, 0, 0, 0.368);
+}
+.button_login{
+  display: block;
+
+  border-radius: 10px;
+  border: solid black 1px;
+  padding: 20px;
+  margin: auto;
+
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #f4c107;
+  color: rgb(0, 0, 0);
+}
+/*Signup CSS*/
+
+#signup {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.title_signup {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
+
+.input_signup{
+  display: block;
+
+  border-radius: 10px;
+  border: solid black 1px;
+  padding: 15px;
+  margin: 20px;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #f4c107;
+  color: rgb(0, 0, 0);
+}
+
+.input_signup::placeholder {
+  color: rgba(0, 0, 0, 0.368);
+}
+.button_signup{
+  display: block;
+
+  border-radius: 10px;
+  border: solid black 1px;
+  padding: 20px;
+  margin: auto;
+
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #f4c107;
+  color: rgb(0, 0, 0);
+}
+
+/*Profile CSS*/
+
+
+.profile_conteiner {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  list-style: none;
+
+  background-color: #f0da89;
+}
+
+.profile_post{
+  padding: 30px;
+}
+
+.img_perfil_post {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.conteiner_img {
+  width: 500px;
+}
+
+.img_post{
+  width: 500px;
+}
+
+.user_name {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+}
