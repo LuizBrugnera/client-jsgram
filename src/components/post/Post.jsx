@@ -10,11 +10,12 @@ import PostProfile from "./PostProfile";
 const Post = ({ screen, userId}) => {
 
   const [listaPosts, setListaPosts] = useState([]);
-
+  const url = process.env.REACT_APP_API_URL;
   const recuperaPosts = async () => {
     try {
-      const usersResponse = await axios.get('http://localhost:3005/users');
-      const postsResponse = await axios.get('http://localhost:3005/posts');
+      console.log(url)
+      const usersResponse = await axios.get(`${url}/users`);
+      const postsResponse = await axios.get(`${url}/posts`);
 
       const users = usersResponse.data.map(user => {
         if(!user.fotoperfil) {
