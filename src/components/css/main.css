@@ -272,6 +272,7 @@ html, body {
 
 .profile_img_perfil{
   width: 200px;
+  border-radius: 50%gi;
 }
 
 .profile_name{
