@@ -5,6 +5,8 @@ import { AuthContext } from "../AuthContext";
 
 import UserLogin from "./UserLogin";
 import UserProfile from "./UserProfile";
+import ButtonSignup from "./ButtonSignup";
+import ButtonChange from "./ButtonChange";
 const User = ({ screen }) => {
   const [listaUsers, setListaUsers] = useState([]);
   const [userPsq, setUserPsq] = useState({
@@ -58,8 +60,6 @@ const User = ({ screen }) => {
         await recuperaUserCodigo(userFound.codigo);
         const token = "fake_token";
         login(token, userFound);
-        console.log("logado");
-        console.log(userFound);
         navigate("/profile");
       } else {
 
@@ -67,6 +67,70 @@ const User = ({ screen }) => {
       }
     } else {
 
+      console.log("erro");
+    }
+  };
+
+  const handlerSubmitSignup = async (e) => {
+    e.preventDefault();
+
+    const username = document.querySelector('#userName').value;
+    const password = document.querySelector('#password').value;
+    const fotoPerfil = document.querySelector('#fotoPerfil').value;
+
+    if (username && password) {
+      const newUser = {
+        nome: username,
+        senha: password,
+        fotoperfil: fotoPerfil,
+      };
+
+      await fetch(`${url}/users`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },  
+        body: JSON.stringify(newUser),
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json);
+          console.log("cadastrado");
+          navigate("/login");
+        })
+        .catch((err) => console.log(err));
+    } else {
+      console.log("erro");
+    }
+  };
+
+  const handlerChangeImgP = async (e) => {
+    e.preventDefault();
+
+    const fotoPerfil = document.querySelector('#fotoPerfil').value;
+
+    if (fotoPerfil) {
+      const newUser = {
+        codigo : user.codigo,
+        nome: user.nome,
+        senha: user.senha,
+        fotoperfil: fotoPerfil,
+      };
+
+      await fetch(`${url}/users/`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          console.log("alterado");
+          navigate("/login");
+        })
+        .catch((err) => console.log(err));
+    } else {
       console.log("erro");
     }
   };
@@ -85,6 +149,15 @@ const User = ({ screen }) => {
         screen === "profile" &&
         <UserProfile myUser={user} />
       }
+      {
+        screen === "buttonS" &&
+        <ButtonSignup handlerSubmitSignup={handlerSubmitSignup}/>
+      }
+      {
+        screen === "buttonChange" &&
+        <ButtonChange handlerChangeImgP={handlerChangeImgP}/>
+      }
+      
     </>
   );
 };

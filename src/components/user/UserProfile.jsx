@@ -3,6 +3,7 @@ import React from 'react'
 import '../css/main.css'
 
 import Post from '../post/Post'
+import User from './User'
 const UserProfile = ({ myUser }) => {
 
   return (
@@ -14,6 +15,9 @@ const UserProfile = ({ myUser }) => {
             <img className='profile_img_perfil' src={myUser.fotoperfil} alt="Foto de perfil" />
           </div>
           <span className='profile_name'>{myUser.nome}</span>
+          <User screen="buttonChange" />
+          <User screen="buttonDelete" />
+          <Post screen={"ButtonAddPost"} userId={myUser.codigo} />
           <Post screen={"postProfile"} userId={myUser.codigo} />
         </div>
       }
@@ -22,3 +26,4 @@ const UserProfile = ({ myUser }) => {
 }
 
 export default UserProfile
+/*<ButtonAdd/> */

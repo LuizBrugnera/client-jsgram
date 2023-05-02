@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route exact="true" path="/" element={<Home />} />
           <Route exact="true" path="/login" element={<User screen="login"/>} />
-          <Route exact="true" path="/signup" element={<User screen="signup"/>} />
+          <Route exact="true" path="/signup" element={<Singup/>} />
           <Route exact="true" path="/profile" element={<ProtectedRoute><User screen="profile"/></ProtectedRoute>} />
           <Route exact="true" path="/feed" element={<Feed/>} />
         </Routes>

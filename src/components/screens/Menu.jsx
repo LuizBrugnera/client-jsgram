@@ -11,7 +11,7 @@ const Menu = () => {
         <img className='img_icon' src={icon} alt='icone do jsgram'/>
         <ul className='conteiner_ul_flex'>
           <li className='item_li'><a href="/feed">Página Incial</a></li>
-          <li className='item_li'><a href="/search">Pesquisa</a></li>
+          <li className='item_li'><a href="/signup">Criar uma conta</a></li>
           <li className='item_li'><a href="/profile">Meu Perfil</a></li>
         </ul>
       </nav>

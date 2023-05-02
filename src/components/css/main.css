@@ -272,7 +272,6 @@ html, body {
 
 .profile_img_perfil{
   width: 200px;
-  border-radius: 50%gi;
 }
 
 .profile_name{
@@ -303,4 +302,33 @@ html, body {
 
 .img_post{
   width: 500px;
+}
+
+.button_change {
+  display: block;
+
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: solid black 1px;
+  margin: 20px;
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: #f4c107;
+  color: rgb(0, 0, 0);
+}
+
+.click-div {
+  width: 50px;
+  background-color: #eebd0c;
+  text-align: center;
+  border-radius: 16px;
+  padding: 5px;
+  margin: 5px 15px;
+
+  display: inline-block;
 }

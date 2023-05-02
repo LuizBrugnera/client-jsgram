@@ -6,6 +6,7 @@ import axios from 'axios';
 import PostContext from "./PostContext";
 import PostFlush from "./PostFlush";
 import PostProfile from "./PostProfile";
+import ButtonAddPost from "./ButtonAddPost";
 
 const Post = ({ screen, userId}) => {
 
@@ -13,7 +14,6 @@ const Post = ({ screen, userId}) => {
   const url = process.env.REACT_APP_API_URL;
   const recuperaPosts = async () => {
     try {
-      console.log(url)
       const usersResponse = await axios.get(`${url}/users`);
       const postsResponse = await axios.get(`${url}/posts`);
 
@@ -47,8 +47,11 @@ const Post = ({ screen, userId}) => {
       { screen === "feed" &&
         <PostFlush/>
       }
-      { screen === "postProfile" &&
-        <PostProfile userId={userId}/>
+      { screen === "postProfile" && 
+        <PostProfile userId={userId} url={url} recuperaPosts={recuperaPosts}/>
+      }
+      { screen === "ButtonAddPost" &&
+        <ButtonAddPost recuperaPosts={recuperaPosts} url={url} userId={userId}/>
       }
     </PostContext.Provider>
   );
